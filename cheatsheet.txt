@@ -1,0 +1,72 @@
+Game:
+    GRAPHICS = string
+    MUSIC = string
+    SFX = string
+    
+    __init__(width=800, height=600, caption="Adventure Game")
+    self.width = int
+    self.height = int
+    self.scree = pygame.Surface
+    self.instructions = pygame.image
+    self.running = bool
+    self.clock = pygame.time.Clock
+    self.fps = int
+    self.font = pygame.font.Font
+    self.text = string
+    self.colors = {'color': tuple}
+
+    run()
+    draw()
+    mouse_click(mpos)
+    setup()
+
+Room:
+    __init__([Views])
+    self.visited: bool
+    self.views: list[View]
+    self.cur_view: int
+
+    change_view(current_view, "left"/"right")
+	returns int
+
+
+View:
+    __init__(path, filename, [Object])    
+    self.visited = bool
+    self.objects = list[Object]
+    self.image = pygame.image
+    self.rect = pygame.Rect
+
+    click_check(mpos)
+	returns Object / None
+
+    check_parents(obj)
+	returns True if all parents of object are activated
+
+    draw(screen) # draws view and all not(dies and dead) objects
+
+Object:
+    __init__(name, path, x, y, image_off, image_on, rect_off, rect_on, 
+	    activated=False, examine=False, breaks=False, dies=False, message="")
+    self.image_on = pygame.image
+    self.image_off = pygame.image
+    self.rect_on = pygame.Rect
+    self.rect_off = pygame.Rect
+    self.examine = bool
+    self.breaks = bool
+    self.dies = bool
+    self.dead = bool
+    self.message = string
+    self.parent = None / Object
+    self.door = None / list[Room, int view]
+hh
+    toggle() # toggles image and rect between activated and deactivated
+
+Requirements:
+    __init__()
+    self.req_dict = {'key': [], 'key2': [], ... 'keyn': []}
+
+    add_req(Object, [Object])
+
+    req_check(Object, [Object]) # return Object if passes requirements, otherwise None
+	returns Object / None
