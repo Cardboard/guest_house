@@ -18,7 +18,7 @@ class Game:
 	self.MUSIC = 'music'
 	self.SFX = 'sfx'	
 	self.BORDER = 70
-	self.OLDTOPMAN = True # debug/cheat mode
+	self.OLDTOPMAN = False # debug/cheat mode (doesn't really do anything yet)
 
 	self.width = width
 	self.height = height
@@ -225,9 +225,10 @@ class Game:
 			"bedroom_closet_gun_off.png", "empty.png",
 			(415, 478, 80, 39), (0,0,0,0),
 			dies=True)
-	#o_door_door = object_.Object("door_door", self.GRAPHICS,
-	#		"bedroom_door_door_off.png", "bedroom_door_door.png",
-	#		message="I don't feel that I would be safe out there...")
+	o_door_door = object_.Object("door_door", self.GRAPHICS, 16, 32,
+			"bedroom_door_door_off.png", "bedroom_door_door_on.png",
+	           	(236, 72, 323, 447), (68, 86, 212, 512),
+			message="I don't think it's safe to go out there...")
 
 	# DECLARE OBJECT PARENTS
 	o_bedroom_article.parent = [o_bedroom_desk]
@@ -250,10 +251,9 @@ class Game:
 			    o_medals_medal4, o_medals_medal5, o_medals_medal6, o_medals_medal7, o_medals_medal8, o_medals_medal9, o_medals_medal0])    
 	v_bedroom_closet = view.View(self.GRAPHICS, "bedroom_closet.png", [o_closet_closet, o_closet_article, o_closet_gun, o_closet_shirt1, o_closet_shirt2, o_closet_shirt3,
 			     o_closet_shirt4, o_closet_shirt5, o_closet_shirt6])
-	#v_bedroom_door = view.View(self.GRAPHICS, "bedroom_door.png", [o_door_door])
+	v_bedroom_door = view.View(self.GRAPHICS, "bedroom_door.png", [o_door_door])
 	# DECLARE ROOMS and set starting room/view
-	self.r_bedroom = room.Room([v_bedroom_bedroom, v_bedroom_closet, v_bedroom_medals])
-	#self.r_bedroom = room.Room([v_bedroom_bedroom, v_bedroom_closet, v_bedroom_door, v_bedroom_medals])
+	self.r_bedroom = room.Room([v_bedroom_bedroom, v_bedroom_closet, v_bedroom_door, v_bedroom_medals])
 	self.room = self.r_bedroom
 	self.cur_view = 0
 	# SETUP OBJECT DOORS
@@ -295,6 +295,6 @@ class Game:
 	self.req.add_sound(self.SFX, "medal.wav", v_bedroom_medals, [o_medals_medal9])
 	self.req.add_sound(self.SFX, "medal.wav", v_bedroom_medals, [o_medals_medal0])
 	# v_bedroom_door
-	#self.req.add_sound(self.SFX, "door.wav", v_bedroom_door, [o_door_door])
+	self.req.add_sound(self.SFX, "door.wav", v_bedroom_door, [o_door_door])
 
 
