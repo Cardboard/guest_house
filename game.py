@@ -26,7 +26,7 @@ class Game:
 	pygame.display.set_caption(caption)
 	# image with instructions to display before the game starts
 	self.instructions = pygame.image.load(os.path.join(self.GRAPHICS, "instructions.png")).convert_alpha()
-	self.intro = True
+	self.intro = False
 	self.running = True
 	self.clock = pygame.time.Clock()
 	self.fps = 30 # 30 fps is fine for an adventure game, right?
