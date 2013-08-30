@@ -21,21 +21,22 @@ class Requirements:
 	validates = True # gets set to false on unsatisfied requirement
 	try:
 	    for req in self.req_dict[obj.name]:
-		print(self.req_dict)
-		print(req)
 		print('*'*10)
 		print('CHECKING {}'.format(obj.name))
+		print(self.req_dict)
+		print(req)
 		for room in rooms:
 		    for view in rooms[room]:
-			print(rooms[room][view]['view'].objects)
 			try:
 			    req = rooms[room][view]['view'].objects[req]
+			    if req.activated:
+				print('req activated', req.name)
+				pass # everything is A-ok, captain!
+			    else:
+				print('req not activated', req.name)
+				validates = False
 			except KeyError:
 			    pass
-			if req.activated:
-			    pass # everything is A-ok, captain!
-			else:
-			    validates = False
 	except KeyError: # object has no reqs/antireqs
 	    pass
 	if validates:

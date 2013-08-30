@@ -1,5 +1,5 @@
 class Room:
-    def __init__(self, views=[]):
+    def __init__(self, views={}):
 	self.visited = False
 	self.views = views
 
@@ -18,5 +18,5 @@ class Room:
 
 	return current
 
-    def __getitem__(self, current):
-	return self.views[current]
+    def __getitem__(self, index):
+	return self.views[index]

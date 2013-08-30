@@ -1,0 +1,20 @@
+{
+    "blue": {
+        "id": 1,
+        "objects": {
+            "door": {
+            }
+        }
+    },
+    "orange": {
+        "id": 0,
+        "objects": {
+            "desk": {
+            },
+            "note": {
+            },
+            "smiley": {
+            }
+        }
+    }
+}

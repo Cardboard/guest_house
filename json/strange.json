@@ -1,4 +1,43 @@
 {
+    "blue": {
+        "id": 1,
+        "objects": {
+            "door": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "door_off.png",
+                "image_on": "empty.png",
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    265,
+                    144,
+                    219,
+                    357
+                ],
+                "rect_on": [
+                    484,
+                    501,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "sound_off": "",
+                "sound_on": "",
+                "x": 264,
+                "y": 144
+            }
+        }
+    },
     "orange": {
         "id": 0,
         "objects": {
@@ -15,25 +54,26 @@
                 "examine": false,
                 "image_off": "desk_off.png",
                 "image_on": "desk_on.png",
+                "layer": 0,
                 "message": "",
                 "parents": [],
                 "rect_off": [
-                    374,
-                    296,
-                    201,
-                    74
+                    319,
+                    297,
+                    209,
+                    72
                 ],
                 "rect_on": [
-                    379,
+                    324,
                     413,
-                    178,
-                    73
+                    181,
+                    65
                 ],
                 "reqs": [],
-                "sound_off": "drawer.wav",
+                "sound_off": "",
                 "sound_on": "",
-                "x": 345,
-                "y": 240
+                "x": 297,
+                "y": 241
             },
             "note": {
                 "activated": false,
@@ -48,25 +88,50 @@
                 "examine": true,
                 "image_off": "note_off.png",
                 "image_on": "note_on.png",
+                "layer": 1,
                 "message": "",
                 "parents": [],
                 "rect_off": [
-                    85,
-                    339,
-                    99,
-                    108
+                    107,
+                    344,
+                    102,
+                    106
                 ],
-                "rect_on": [
-                    8,
-                    16,
-                    772,
-                    550
-                ],
+                "rect_on": "full",
                 "reqs": [],
                 "sound_off": "",
                 "sound_on": "",
-                "x": 81,
-                "y": 326
+                "x": 105,
+                "y": 334
+            },
+            "smiley": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": true,
+                "image_off": "smiley_off.png",
+                "image_on": "smiley_on.png",
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    438,
+                    340,
+                    91,
+                    82
+                ],
+                "rect_on": "full",
+                "reqs": [],
+                "sound_off": "",
+                "sound_on": "",
+                "x": 413,
+                "y": 344
             }
         }
     }

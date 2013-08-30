@@ -51,10 +51,10 @@ class Game:
 	mpos = (0, 0)
 	self.setup()
 
-	music = os.path.join(self.MUSIC, "come_home.wav")
-	pygame.mixer.music.load(music)
-	pygame.mixer.music.set_volume(0.5)
-	pygame.mixer.music.play(-1)
+#	music = os.path.join(self.MUSIC, "come_home.wav")
+#	pygame.mixer.music.load(music)
+#	pygame.mixer.music.set_volume(0.5)
+#	pygame.mixer.music.play(-1)
 
 	while self.running:
 	    for event in pygame.event.get():
@@ -133,13 +133,25 @@ class Game:
 		    obj.toggle(self.req.sounds)
 		else:
 		    obj.toggle(self.req.sounds)
-		    self.cur_room = obj.door[room] # Room
-		    self.cur_view = obj.door[view] # int
+		    self.cur_room = obj.door['room'] # Room
+		    self.cur_view = obj.door['view'] # int
 	# CHECK IF CLICKED BORDER
 	if mpos[0] <= self.BORDER:
-	    self.cur_view = self.room.change_view(self.cur_view, "left")
+	    i = self.rooms[self.cur_room][self.cur_view]['id']
+	    i -= 1 
+	    if i < 0:
+		i = len(self.rooms[self.cur_room]) - 1
+	    for view in self.rooms[self.cur_room]:
+		if self.rooms[self.cur_room][view]['id'] == i:
+		    self.cur_view = view
 	elif mpos[0] >= self.width - self.BORDER:
-	    self.cur_view = self.room.change_view(self.cur_view, "right")
+	    i = self.rooms[self.cur_room][self.cur_view]['id']
+	    i += 1
+	    if i > len(self.rooms[self.cur_room]) - 1:
+		i = 0
+	    for view in self.rooms[self.cur_room]:
+		if self.rooms[self.cur_room][view]['id'] == i:
+		    self.cur_view = view
 	 
 
     # define all objects, rooms, views, doors, requirements, etc.
@@ -166,56 +178,59 @@ class Game:
 
 	    # create a room, ready to have views added to it
 	    print("-creating room " + room_name)
-	    self.rooms[room_name] = {room_name: room.Room()}
+	    self.rooms[room_name] = {}
 
 	    for view_name in data_rooms[room_name]:
-		print(view_name)
 		# create a room, ready to have rooms added to it
 		print("    -creating view {}".format(view_name))
 		view_path = os.path.join(self.GRAPHICS, room_name, view_name)
 		self.rooms[room_name][view_name] = {'id': data_rooms[room_name][view_name]['id'],
-						    'view': view.View(view_path, 'bg.png'),
-						    'objects': []}
+						    'view': view.View(view_path, 'bg.png')}
 
 		# get data for the view
 		data_view = data_rooms[room_name][view_name]
+		objects = {}
 		for obj_name in data_view["objects"].keys():
 		    # declare objects  
-		    #print(data_view["objects"][obj_key])
 		    obj = data_view["objects"][obj_name]
+		    obj_name = view_name + "_" + obj_name
 		    print("        -creating object {}".format(obj_name))
 		    obj_path = os.path.join(self.GRAPHICS, room_name, view_name)
 		    try:
 			# object is already set up in json file
-			vars()[obj_name] = self.create_object(obj_name, obj_path, obj)
+			self.create_object(objects, room_name, view_name, obj_name, obj_path, obj)
 		    except KeyError: # something in the object is not set up
 			# launch the editor
 			print("        @editing object {}".format(obj_name))
-			self.editor(data_rooms, room_name, view_name, obj_name)
+			self.editor(data_rooms, room_name, view_name, obj_name, objects)
+			sys.exit()
+			pygame.quit()
 			# reload the file and grab the object just edited
-			file_room = open(os.path.join(self.JSON, (room_name+".json")), "r")
-			print("* {}.json opened".format(room_name))
-			data_rooms[room_name] = json.load(file_room)
-			file_room.close()
-			print("* {}.json closed".format(room_name))
-			# create the object
-			vars()[obj_name] = self.create_object(obj_name, obj_path, obj)
+			#file_room = open(os.path.join(self.JSON, (room_name+".json")), "r")
+			#print("* {}.json opened".format(room_name))
+			#data_rooms[room_name] = json.load(file_room)
+			#file_room.close()
+			#print("* {}.json closed".format(room_name))
+			## create the object
+			#self.create_object(objects, room_name, view_name, obj_name, obj_path, obj)
 		    # setup object doors
 		    if obj['door']['room'] != "" and obj['door']['view'] != "":
-			vars()[obj_name].door = {'room': obj['door']['room'], 'view': obj['door']['view']}
+			objects[obj_name].door = \
+					{'room': obj['door']['room'], 'view': obj['door']['view']}
 		    # setup object parents and antiparents
 		    if obj['parents'] != [""]:
 			parents = []
 			for parent in obj['parents']:
 			    parents.append(parent)
-			vars()[obj_name].parents = parents
+			objects[obj_name].parents = parents
 		    if obj['antiparents'] != [""]:
 			antiparents = []
 			for antiparent in obj['antiparents']:
 			    antiparents.append(antiparent)
-			vars()[obj_name].antiparents = antiparents
+			objects[obj_name].antiparents = antiparents
 		    # add reqs and antireqs for object
 		    reqs = []
+		    antireqs = []
 		    if obj['reqs'] != []:
 			reqs = obj['reqs']
 			if obj['antireqs'] != []:
@@ -227,39 +242,53 @@ class Game:
 			    self.req.add_req(obj_name, reqs)
 		    # add sound effects
 		    if obj['sound_on'] != "":
-			vars()[obj_name].sound_on = obj['sound_on']
+			#vars()[obj_name].sound_on = obj['sound_on']
+			objects[obj_name].sound_on = obj['sound_on']
 			self.req.add_sound(self.SFX, obj['sound_on'])
 		    if obj['sound_off'] != "":
-			vars()[obj_name].sound_off = obj['sound_off']
+			#vars()[obj_name].sound_off = obj['sound_off']
+			objects[obj_name].sound_off = obj['sound_off']
 			self.req.add_sound(self.SFX, obj['sound_off'])
 			    
-		    self.rooms[room_name][view_name]['view'].objects[obj_name] = vars()[obj_name]
-	    print("! done creating objects in view {}".format(view_name))
-		
-	    # construct rooms and set starting room
-	    self.cur_room = data_setup['start_room']
-	    self.cur_view = data_setup['start_view']
+		    print("        ! added {} to {}".format(obj_name, view_name))
+		print("    ! done creating objects in view {}".format(view_name))
+		self.rooms[room_name][view_name]['view'].objects = objects
 
-    def create_object(self, obj_name, obj_path, obj):
-	new_object = object_.Object(obj_name, obj_path, obj['x'], obj['y'],
-				obj['image_off'], obj['image_on'],
-				obj['rect_off'], obj['rect_on'],
-				activated=obj['activated'],examine=obj['examine'],
+	# construct rooms and set starting room
+	self.cur_room = data_setup['start_room']
+	self.cur_view = data_setup['start_view']
+
+    def create_object(self, objects, room_name, view_name, obj_name, obj_path, obj):
+	if obj['image_off'] == "empty.png":
+	    image_off = os.path.join(self.GRAPHICS, "empty.png")
+	else:
+	    image_off = os.path.join(self.GRAPHICS, room_name, view_name, obj["image_off"])
+	if obj['image_on'] == "empty.png":
+	    image_on = os.path.join(self.GRAPHICS, "empty.png")
+	else:
+	    image_on = os.path.join(self.GRAPHICS, room_name, view_name, obj["image_on"])
+	new_object = object_.Object(obj_name, obj['x'], obj['y'],\
+				image_off, image_on,\
+				obj['rect_off'], obj['rect_on'],\
+				layer=obj['layer'],\
+				activated=obj['activated'],examine=obj['examine'],\
 				breaks=obj['breaks'],dies=obj['dies'],message=obj['message'])
-	return new_object
+	#self.rooms[room_name][view_name]['view'].objects[obj_name] = new_object
+	objects[obj_name] = new_object
 
 
-    def editor(self, data_rooms, room_name, view_name, obj_name):
+    def editor(self, data_rooms, room_name, view_name, obj_name, objects):
 	mpos = (0,0)
 	new_object = {}
-	stage = 1 # decides what is set on mouse click
+	obj_name_sansview = obj_name.split('_')[1]
+	stage = 0 # decides what is set on key press or mouse click
 	pos = None # x,y position of images
 	pos_start = None
 	pos_end = None
 	image_on = None
 	image_off = None
 	examine = False
-	self.text = "IMAGE_OFF IS BLANK IMAGE? (y/n)"
+	self.text = "SELECT OBJECT LAYER. LOWER NUMBERS DRAWN FIRST. (0-9)"
 
 	flag_click = False
 	flag_key = ''
@@ -273,19 +302,37 @@ class Game:
 		    if event.button == 1: # left click
 			flag_click = True
 		if event.type == pygame.KEYDOWN:
-		    if event.key == pygame.K_y:
+		    key = event.key
+		    if key == pygame.K_y:
 			flag_key = 'y'
-		    elif event.key == pygame.K_n:
+		    elif key == pygame.K_n:
 			flag_key = 'n'
-	    if stage == 1 and flag_key != "":
+		    elif key == pygame.K_0: flag_key = 0
+		    elif key == pygame.K_1: flag_key = 1
+		    elif key == pygame.K_2: flag_key = 2
+		    elif key == pygame.K_3: flag_key = 3
+		    elif key == pygame.K_4: flag_key = 4
+		    elif key == pygame.K_5: flag_key = 5
+		    elif key == pygame.K_6: flag_key = 6
+		    elif key == pygame.K_7: flag_key = 7
+		    elif key == pygame.K_8: flag_key = 8
+		    elif key == pygame.K_9: flag_key = 9
+		    print(flag_key)
+	    if stage == 0 and flag_key != "": # choose object layer
+		if flag_key in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
+		    new_object['layer'] = flag_key
+		    stage = 1
+		    self.text = "IMAGE_OFF IS BLANK IMAGE? (y/n)"
+		    flag_key = ""
+	    elif stage == 1 and flag_key != "":
 		if flag_key == 'y':
 		    new_object['image_off'] = 'empty.png'
 		    stage = 2
 		    self.text = "IMAGE_ON IS BLANK IMAGE? (y/n)"
 		    flag_key = ""
 		elif flag_key == 'n':
-		    new_object['image_off'] = obj_name + '_off.png'
-		    image_path = os.path.join(self.GRAPHICS, room_name, view_name, obj_name)
+		    new_object['image_off'] = obj_name_sansview + '_off.png'
+		    image_path = os.path.join(self.GRAPHICS, room_name, view_name, obj_name_sansview)
 		    image_path = image_path + "_off.png"
 		    image_off = pygame.image.load(image_path).convert_alpha()
 		    stage = 2
@@ -298,8 +345,8 @@ class Game:
 		    self.text = "SET X, Y POS OF IMAGES"
 		    flag_key = ""
 		elif flag_key == 'n':
-		    new_object['image_on'] = obj_name + '_on.png'
-		    image_path = os.path.join(self.GRAPHICS, room_name, view_name, obj_name)
+		    new_object['image_on'] = obj_name_sansview + '_on.png'
+		    image_path = os.path.join(self.GRAPHICS, room_name, view_name, obj_name_sansview)
 		    image_path = image_path + "_on.png"
 		    image_on = pygame.image.load(image_path).convert_alpha()
 		    stage = 3
@@ -362,6 +409,8 @@ class Game:
 		    new_object['examine'] = True
 		    stage = 8
 		    examine = True
+		    # set rect to entire screen
+		    new_object['rect_on'] = 'full'
 		    self.text = "OBJECT BREAKS? (y/n)"
 		    flag_key = False
 		elif flag_key == 'n':
@@ -408,7 +457,7 @@ class Game:
 		#file_room = open(os.path.join(self.JSON, (room_name+".json")), "r")
 		#data_rooms = json.load(file_room)
 		for field in new_object:
-		    data_rooms[room_name][view_name]['objects'][obj_name][field] = new_object[field] 
+		    data_rooms[room_name][view_name]['objects'][obj_name_sansview][field] = new_object[field] 
 		file_rooms = open(os.path.join(self.JSON, (room_name + ".json")), 'w')  
 		json.dump(data_rooms[room_name], file_rooms, sort_keys=True,
 					indent=4, separators=(',', ': '))
@@ -422,26 +471,52 @@ class Game:
 	    flag_click = False
 	    flag_key = ''
 
-	    # draw stuff
 	    # draw view background image
 	    self.screen.blit(self.rooms[room_name][view_name]['view'].image, (0,0)) 
+	    # START OBJECT DRAWING
 	    # draw objects already set up
-	    for obj in self.rooms[room_name][view_name]['view'].objects:
-		obj = self.rooms[room_name][view_name]['view'].objects[obj]
-		self.screen.blit(obj.image_off, (obj.x, obj.y))
-		if not(obj.examine): # don't need examined objects obscuring the entire screen
-		    self.screen.blit(obj.image_on, (obj.x, obj.y))
+	    queue = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[],'7':[],'8':[],'9':[]}
+	    # draw view first, then objects
+	    for obj in objects:
+		obj = objects[obj] # get object by getting value at objects[key]
+		# don't draw if object dies and is dead.
+		# broken and dead objects still get drawn.
+		queue[str(obj.layer)].append((obj.image_off, (obj.x, obj.y)))
+		if obj.examine:
+		    pass # don't draw the 'on' image of examined objects
+		else:
+		    queue[str(obj.layer)].append((obj.image_on, (obj.x, obj.y)))
 	    # draw object after placing it
 	    if image_on and not(examine):
+		layer = str(new_object["layer"])
 		if pos:
-		    self.screen.blit(image_on, pos)
+		    queue[layer].append((image_on, pos))
+		    #self.screen.blit(image_on, pos)
 		else:
-		    self.screen.blit(image_on, mpos)
+		    queue[layer].append((image_on, mpos))
+		    #self.screen.blit(image_on, mpos)
 	    if image_off:
+		layer = str(new_object["layer"])
 		if pos:
-		    self.screen.blit(image_off, pos)
+		    queue[layer].append((image_off, pos))
+		    #self.screen.blit(image_on, pos)
 		else:
-		    self.screen.blit(image_off, mpos)
+		    queue[layer].append((image_off, mpos))
+		    #self.screen.blit(image_on, mpos)
+	    # Print objects in queue in order of layers.
+	    # Lower numbers drawn first (0-9)
+	    for number in range(0, 10):
+		if queue[str(number)] != []:
+		    for i in queue[str(number)]:
+			self.screen.blit(i[0], i[1])
+
+	    # END OBJECT DRAWING
+	    
+#	    for obj in self.rooms[room_name][view_name]['view'].objects:
+#		obj = self.rooms[room_name][view_name]['view'].objects[obj]
+#		self.screen.blit(obj.image_off, (obj.x, obj.y))
+#		if not(obj.examine): # don't need examined objects obscuring the entire screen
+#		    self.screen.blit(obj.image_on, (obj.x, obj.y))
 	    # draw rect when placing rect
 	    if pos_start and not(pos_end):
 		if mpos[0] < pos_start[0]:
