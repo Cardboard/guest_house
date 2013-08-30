@@ -1,5 +1,5 @@
 class Room:
-    def __init__(self, views):
+    def __init__(self, views=[]):
 	self.visited = False
 	self.views = views
 

@@ -1,0 +1,39 @@
+{
+    "orange":
+    {	
+	"id": 0,	
+	"objects":
+	    {
+		"note":
+		{
+		    "x": 121,
+		    "y": 193,
+		    "rect_on": [121, 193, 388, 212],
+		    "rect_off": [121, 193, 388, 212],
+		    "image_on": "note_on.png",
+		    "image_off": "note_off.png",
+		    "activated": false,
+		    "examine": true,
+		    "breaks": false,
+		    "dies": false,
+		    "message": "",
+		    
+		    "sound_on": "cloth.wav",
+		    "sound_off": "cloth.wav",
+
+		    "parents": [],
+		    "antiparents": [],
+
+		    "reqs": []
+		    "antireqs": [],
+
+		    "door": {"room": "",
+			    "view": ""}
+		},
+		"desk":
+		{
+		}
+	    }
+    }
+    
+}

@@ -1,0 +1,22 @@
+{
+    "name": "bedroom",
+    "objects": ["bed", "desk", "article", "alarm", "diary"]
+}
+
+{
+    "name": "closet",
+    "objects": ["closet", "article", "gun", "shirt1", "shirt2",
+		"shirt3", "shirt4", "shirt5", "shirt6"]
+}
+
+{
+    "name": "medals",
+    "objects": ["picture", "tv", "closetkey", "medal1", "medal2",
+		"medal3", "medal4", "medal5", "medal6", "medal7",
+		"medal8", "medal9", "medal0"]
+}
+
+{
+    "name": "door",
+    "objects": ["door"]
+}

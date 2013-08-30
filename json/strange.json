@@ -1,0 +1,73 @@
+{
+    "orange": {
+        "id": 0,
+        "objects": {
+            "desk": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "desk_off.png",
+                "image_on": "desk_on.png",
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    374,
+                    296,
+                    201,
+                    74
+                ],
+                "rect_on": [
+                    379,
+                    413,
+                    178,
+                    73
+                ],
+                "reqs": [],
+                "sound_off": "drawer.wav",
+                "sound_on": "",
+                "x": 345,
+                "y": 240
+            },
+            "note": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": true,
+                "image_off": "note_off.png",
+                "image_on": "note_on.png",
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    85,
+                    339,
+                    99,
+                    108
+                ],
+                "rect_on": [
+                    8,
+                    16,
+                    772,
+                    550
+                ],
+                "reqs": [],
+                "sound_off": "",
+                "sound_on": "",
+                "x": 81,
+                "y": 326
+            }
+        }
+    }
+}

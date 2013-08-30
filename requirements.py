@@ -8,25 +8,35 @@ class Requirements:
 	self.sounds = {}
 	self.sound_reqs = []
 	
-    def add_req(self, obj, reqs, antireqs=None):
-	self.req_dict[obj.name] = []
+    def add_req(self, obj_name, reqs, antireqs=None):
+	self.req_dict[obj_name] = []
 	for req in reqs:
-	    self.req_dict[obj.name].append(req)
+	    self.req_dict[obj_name].append(req)
 	if antireqs != None:
-	    self.req_dict[obj.name+'_anti'] = []
+	    self.req_dict[obj_name+'_anti'] = []
 	    for anti in antireqs:
-		self.req_dict[obj.name+'_anti'].append(anti)
+		self.req_dict[obj_name+'_anti'].append(anti)
 
-    def req_check(self, obj, objects):
+    def req_check(self, obj, rooms):
 	validates = True # gets set to false on unsatisfied requirement
 	try:
 	    for req in self.req_dict[obj.name]:
-		if req.activated:
-		    pass # everything is A-ok, captain!
-		else:
-		    validates = False
-	# object has no requirements
-	except KeyError:
+		print(self.req_dict)
+		print(req)
+		print('*'*10)
+		print('CHECKING {}'.format(obj.name))
+		for room in rooms:
+		    for view in rooms[room]:
+			print(rooms[room][view]['view'].objects)
+			try:
+			    req = rooms[room][view]['view'].objects[req]
+			except KeyError:
+			    pass
+			if req.activated:
+			    pass # everything is A-ok, captain!
+			else:
+			    validates = False
+	except KeyError: # object has no reqs/antireqs
 	    pass
 	if validates:
 	    try:
@@ -43,7 +53,7 @@ class Requirements:
 	else:
 	    return (obj, True)
     
-    def add_sound(self, path, filename, view, reqs, volume=1.0):
+    def add_sound(self, path, filename, volume=1.0):
 	if filename in self.sounds:
 	    # sound has already been created
 	    pass
@@ -52,29 +62,3 @@ class Requirements:
 	    sound = pygame.mixer.Sound(sound)
 	    sound.set_volume(volume)
 	    self.sounds[filename] = sound
-	self.sound_reqs.append({'name': filename,
-				'view': view,
-				'reqs': reqs,
-				'triggered': False})
-
-    def sound_check(self, view):
-	# check = {'name', 'reqs', 'triggered'}
-	for check in self.sound_reqs:
-	    validates = True
-	    if check['view'] != view:
-		validates = False
-	    for obj in view.objects:
-		# the object is in the sound's reqs
-		if obj in check['reqs']:
-		    # the sound is not activated
-		    if not(obj.activated):
-			if check['triggered'] == True:
-			    check['triggered'] = False 
-			    self.sounds[check['name']].play()
-			validates = False
-	    # reqs are activated and sound hasn't been triggered
-	    if validates and check['triggered'] == False:
-		self.sounds[check['name']].play()
-		check['triggered'] = True
-
-

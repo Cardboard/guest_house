@@ -1,0 +1,9 @@
+{
+    "name": "bedroom",
+    "views": ["bedroom", "closet", "door", "medals"]
+}
+
+{
+    "name": "livingroom",
+    "views": ["couch", "table", "computer", "hallway"]
+}

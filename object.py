@@ -31,19 +31,27 @@ class Object:
 	# set after initialization
 	self.parent = None
 	self.antiparent = None
+	self.breakparent = False # if true, doesn't deactivate after activating then deactivating parents
 	self.door = None
+	# sound stuff
+	self.sound_on = None
+	self.sound_off = None
 
     # toggle image and rect between activated and deactivated
-    def toggle(self):
+    def toggle(self, sounds):
 	if not(self.dead):
 	    if self.activated:
 		self.image = self.image_off
 		self.rect = self.rect_off
 		self.activated = False
+		if self.sound_on: # object has sound for activation
+		    sounds[self.sound_off].play()
 	    elif not(self.activated):
 		self.image = self.image_on
 		self.rect = self.rect_on
 		self.activated = True
+		if self.sound_off: # object has sound for deactivation
+		    sounds[self.sound_off].play()
 	    # kill it if it should be killed
 	    if self.breaks or self.dies:
 		self.dead = True
