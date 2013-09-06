@@ -1,0 +1,171 @@
+{
+    "game": {
+        "id": 0,
+        "objects": {
+            "bro": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "bro_off_1.png",
+                    "bro_off_2.png"
+                ],
+                "image_on": "empty.png",
+                "info": true,
+                "layer": 1,
+                "message": "",
+                "parents": [
+                    "bedroom2_game_gc"
+                ],
+                "rect_off": [
+                    610,
+                    186,
+                    91,
+                    138
+                ],
+                "rect_on": [
+                    701,
+                    324,
+                    -105,
+                    -145
+                ],
+                "reqs": [],
+                "response": "\"Hey bro.\"",
+                "sound_off": "",
+                "sound_on": "",
+                "speed": 30,
+                "x": 309,
+                "y": 175
+            },
+            "gc": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "gc_off_1.png",
+                    "gc_off_2.png"
+                ],
+                "image_on": [
+                    "gc_on_1.png",
+                    "gc_on_2.png"
+                ],
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    335,
+                    297,
+                    33,
+                    32
+                ],
+                "rect_on": [
+                    306,
+                    350,
+                    50,
+                    54
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "power.wav",
+                "sound_on": "power.wav",
+                "speed": 20,
+                "x": 171,
+                "y": 205
+            }
+        }
+    },
+    "pc": {
+        "id": 1,
+        "objects": {
+            "door": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "living",
+                    "view": "fireplace"
+                },
+                "examine": false,
+                "image_off": ["door_off_1.png", "door_off_2.png"],
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    520,
+                    131,
+                    209,
+                    317
+                ],
+                "rect_on": [
+                    729,
+                    448,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "door.wav",
+                "speed": 50,
+                "x": 515,
+                "y": 129
+            },
+            "pc": {
+                "activated": true,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": ["pc_off_1.png","pc_off_2.png"],
+                "image_on": ["pc_on_1.png", "pc_on_2.png"],
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    88,
+                    427,
+                    91,
+                    20
+                ],
+                "rect_on": [
+                    89,
+                    426,
+                    90,
+                    21
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "power.wav",
+                "sound_on": "power.wav",
+                "speed": 60,
+                "x": 74,
+                "y": 204
+            }
+        }
+    }
+}

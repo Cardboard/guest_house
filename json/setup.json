@@ -1,5 +1,5 @@
 {
-    "rooms": ["strange"],
-    "start_room": "strange",
-    "start_view": "orange"
+    "rooms": ["living","bedroom2","bedroom"],
+    "start_room": "bedroom",
+    "start_view": "bed"
 }

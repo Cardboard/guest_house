@@ -1,0 +1,542 @@
+{
+    "couch": {
+        "id": 1,
+        "objects": {
+            "cabinet": {
+                "activated": true,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "cabinet_off_1.png",
+                    "cabinet_off_2.png"
+                ],
+                "image_on": [
+                    "cabinet_on_1.png",
+                    "cabinet_on_2.png"
+                ],
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    482,
+                    324,
+                    207,
+                    137
+                ],
+                "rect_on": [
+                    441,
+                    320,
+                    283,
+                    147
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "wood.wav",
+                "sound_on": "wood.wav",
+                "speed": 30,
+                "x": 420,
+                "y": 267
+            },
+            "cushion": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "cushion_off_1.png",
+                    "cushion_off_2.png"
+                ],
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    104,
+                    321,
+                    105,
+                    64
+                ],
+                "rect_on": [
+                    109,
+                    326,
+                    103,
+                    57
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 50,
+                "x": 109,
+                "y": 311
+            },
+            "dvr": {
+                "activated": true,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "dvr_off_1.png",
+                    "dvr_off_2.png"
+                ],
+                "image_on": [
+                    "dvr_on_1.png",
+                    "dvr_on_2.png"
+                ],
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [
+                    "living_couch_cabinet"
+                ],
+                "rect_off": [
+                    538,
+                    380,
+                    85,
+                    50
+                ],
+                "rect_on": [
+                    541,
+                    378,
+                    85,
+                    54
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "power.wav",
+                "sound_on": "power.wav",
+                "speed": 30,
+                "x": 525,
+                "y": 198
+            },
+            "note": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": true,
+                "image_off": [
+                    "note_off_1.png",
+                    "note_off_2.png"
+                ],
+                "image_on": "note_on.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [
+                    "living_couch_cushion"
+                ],
+                "rect_off": [
+                    143,
+                    345,
+                    43,
+                    32
+                ],
+                "rect_on": "full",
+                "reqs": [],
+                "response": "",
+                "sound_off": "examine.wav",
+                "sound_on": "examine.wav",
+                "speed": 20,
+                "x": 116,
+                "y": 305
+            }
+        }
+    },
+    "fireplace": {
+        "id": 0,
+        "objects": {
+            "dad": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "dad_off_1.png",
+                    "dad_off_2.png"
+                ],
+                "image_on": "empty.png",
+                "info": true,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    74,
+                    204,
+                    71,
+                    270
+                ],
+                "rect_on": [
+                    140,
+                    430,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "\"You need to get a job.\"",
+                "sound_off": "",
+                "sound_on": "",
+                "speed": 50,
+                "x": 44,
+                "y": 182
+            },
+            "fire": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "fire_off_1.png",
+                    "fire_off_2.png",
+                    "fire_off_3.png"
+                ],
+                "image_on": "empty.png",
+                "info": true,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    323,
+                    338,
+                    123,
+                    80
+                ],
+                "rect_on": [
+                    429,
+                    406,
+                    0, 
+                    0
+                ],
+                "reqs": [],
+                "response": "ouch!",
+                "sound_off": "",
+                "sound_on": "",
+                "speed": 10.0,
+                "x": 302,
+                "y": 294
+            },
+            "mom": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "mom_off_1.png",
+                    "mom_off_2.png"
+                ],
+                "image_on": "empty.png",
+                "info": true,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    619,
+                    189,
+                    67,
+                    262
+                ],
+                "rect_on": [
+                    573,
+                    333,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "\"Your father is right.\"",
+                "sound_off": "",
+                "sound_on": "",
+                "speed": 50,
+                "x": 573,
+                "y": 181
+            },
+            "sword": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "sword_off_1.png",
+                    "sword_off_2.png"
+                ],
+                "image_on": [
+                    "sword_on_1.png",
+                    "sword_on_2.png"
+                ],
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    474,
+                    63,
+                    267,
+                    53
+                ],
+                "rect_on": [
+                    476,
+                    39,
+                    255,
+                    96
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "",
+                "speed": 20,
+                "x": 454,
+                "y": 19
+            }
+        }
+    },
+    "frontdoor": {
+        "id": 2,
+        "objects": {
+            "bg2": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "bg2_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    43,
+                    522,
+                    0,
+                    0
+                ],
+                "rect_on": [
+                    43,
+                    522,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "",
+                "speed": 0,
+                "x": 0,
+                "y": 0
+            },
+            "door": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": [
+                    "door_off_1.png",
+                    "door_off_2.png"
+                ],
+                "image_on": [
+                    "door_on_1.png",
+                    "door_on_2.png"
+                ],
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    272,
+                    68,
+                    174,
+                    234
+                ],
+                "rect_on": [
+                    452,
+                    89,
+                    171,
+                    222
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "door.wav",
+                "sound_on": "door.wav",
+                "speed": 40,
+                "x": 241,
+                "y": 59
+            }
+        }
+    },
+    "hallway": {
+        "id": 3,
+        "objects": {
+            "doorleft": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "bedroom2",
+                    "view": "game"
+                },
+                "examine": false,
+                "image_off": ["doorleft_off_1.png","doorleft_off_2.png"],
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    116,
+                    88,
+                    109,
+                    227
+                ],
+                "rect_on": [
+                    204,
+                    285,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "door.wav",
+                "speed": 40,
+                "x": 113,
+                "y": 52
+            },
+            "doormid": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": ["doormid_off_1.png","doormid_off_2.png"],
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    364,
+                    72,
+                    60,
+                    74
+                ],
+                "rect_on": [
+                    424,
+                    146,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "door.wav",
+                "speed": 30,
+                "x": 353,
+                "y": 67
+            },
+            "doorright": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "bedroom",
+                    "view": "bed"
+                },
+                "examine": false,
+                "image_off": ["doorright_off_1.png","doorright_off_2.png"],
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    545,
+                    111,
+                    116,
+                    220
+                ],
+                "rect_on": [
+                    661,
+                    330,
+                    1,
+                    -1
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "door.wav",
+                "speed": 35,
+                "x": 534,
+                "y": 75
+            }
+        }
+    }
+}

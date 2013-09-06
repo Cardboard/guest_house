@@ -1,0 +1,1069 @@
+{
+    "bed": {
+        "id": 0,
+        "objects": {
+            "alarm": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": true,
+                "image_off": "alarm_off.png",
+                "image_on": "alarm_on.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    635,
+                    296,
+                    39,
+                    34
+                ],
+                "rect_on": "full",
+                "reqs": [],
+                "response": "",
+                "sound_off": "plastic.wav",
+                "sound_on": "plastic.wav",
+                "speed": 0,
+                "x": 631,
+                "y": 297
+            },
+            "article": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": true,
+                "image_off": "article_off.png",
+                "image_on": "article_on.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [
+                    "bedroom_bed_desk"
+                ],
+                "rect_off": [
+                    600,
+                    411,
+                    33,
+                    20
+                ],
+                "rect_on": "full",
+                "reqs": [],
+                "response": "",
+                "sound_off": "examine.wav",
+                "sound_on": "examine.wav",
+                "speed": 0,
+                "x": 595,
+                "y": 404
+            },
+            "bed": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "bed_off.png",
+                "image_on": "bed_on.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    207,
+                    243,
+                    249,
+                    194
+                ],
+                "rect_on": [
+                    217,
+                    229,
+                    236,
+                    212
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 0,
+                "x": 122,
+                "y": 194
+            },
+            "desk": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "desk_off.png",
+                "image_on": "desk_on.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    525,
+                    343,
+                    165,
+                    78
+                ],
+                "rect_on": [
+                    487,
+                    418,
+                    177,
+                    86
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "drawer.wav",
+                "sound_on": "drawer.wav",
+                "speed": 0,
+                "x": 487,
+                "y": 293
+            },
+            "diary": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": true,
+                "image_off": "diary_off.png",
+                "image_on": "diary_on.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    555,
+                    307,
+                    60,
+                    27
+                ],
+                "rect_on": "full",
+                "reqs": [],
+                "response": "",
+                "sound_off": "book.wav",
+                "sound_on": "book.wav",
+                "speed": 0,
+                "x": 550,
+                "y": 305
+            }
+        }
+    },
+    "closet": {
+        "id": 1,
+        "objects": {
+            "article": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": true,
+                "image_off": "article_off.png",
+                "image_on": "article_on.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet"
+                ],
+                "rect_off": [
+                    326,
+                    473,
+                    42,
+                    51
+                ],
+                "rect_on": "full",
+                "reqs": [],
+                "response": "",
+                "sound_off": "examine.wav",
+                "sound_on": "examine.wav",
+                "speed": 0,
+                "x": 318,
+                "y": 473
+            },
+            "closet": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "closet_off.png",
+                "image_on": "closet_on.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    125,
+                    36,
+                    548,
+                    548
+                ],
+                "rect_on": [
+                    116,
+                    33,
+                    557,
+                    556
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "wood.wav",
+                "sound_on": "wood.wav",
+                "speed": 0,
+                "x": 0,
+                "y": 0
+            },
+            "gun": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": true,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "gun_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet",
+                    "bedroom_closet_shirt3",
+                    "bedroom_closet_shirt4",
+                    "bedroom_closet_shirt6"
+                ],
+                "rect_off": [
+                    439,
+                    475,
+                    77,
+                    38
+                ],
+                "rect_on": [
+                    448,
+                    483,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "plastic.wav",
+                "speed": 0,
+                "x": 439,
+                "y": 476
+            },
+            "shirt1": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "greenshirt_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet"
+                ],
+                "rect_off": [
+                    113,
+                    125,
+                    241,
+                    241
+                ],
+                "rect_on": [
+                    113,
+                    125,
+                    241,
+                    241
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 0,
+                "x": 113,
+                "y": 125
+            },
+            "shirt2": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "redshirt_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 2,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet"
+                ],
+                "rect_off": [
+                    219,
+                    139,
+                    241,
+                    241
+                ],
+                "rect_on": [
+                    219,
+                    139,
+                    241,
+                    241
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 0,
+                "x": 169,
+                "y": 139
+            },
+            "shirt3": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "blueshirt_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 3,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet"
+                ],
+                "rect_off": [
+                    291,
+                    133,
+                    241,
+                    241
+                ],
+                "rect_on": [
+                    291,
+                    133,
+                    241,
+                    241
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 0,
+                "x": 241,
+                "y": 133
+            },
+            "shirt4": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "blueshirt_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 4,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet"
+                ],
+                "rect_off": [
+                    361,
+                    112,
+                    241,
+                    241
+                ],
+                "rect_on": [
+                    361,
+                    112,
+                    241,
+                    241
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 0,
+                "x": 311,
+                "y": 112
+            },
+            "shirt5": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "greenshirt_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 5,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet"
+                ],
+                "rect_off": [
+                    419,
+                    116,
+                    241,
+                    241
+                ],
+                "rect_on": [
+                    419,
+                    119,
+                    241,
+                    241
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 0,
+                "x": 369,
+                "y": 119
+            },
+            "shirt6": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "blueshirt_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 6,
+                "message": "",
+                "parents": [
+                    "bedroom_closet_closet"
+                ],
+                "rect_off": [
+                    485,
+                    112,
+                    241,
+                    241
+                ],
+                "rect_on": [
+                    485,
+                    112,
+                    241,
+                    241
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 0,
+                "x": 435,
+                "y": 112
+            }
+        }
+    },
+    "door": {
+        "id": 2,
+        "objects": {
+            "door": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "living",
+                    "view": "fireplace"
+                },
+                "examine": false,
+                "image_off": "door_off.png",
+                "image_on": "door_on.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    266,
+                    64,
+                    295,
+                    437
+                ],
+                "rect_on": [
+                    92,
+                    103,
+                    211,
+                    451
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "door.wav",
+                "speed": 0,
+                "x": 42,
+                "y": 24
+            }
+        }
+    },
+    "medals": {
+        "id": 3,
+        "objects": {
+            "medal1":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                140,
+                374,
+                51,
+                117
+                ],
+                "rect_on": [
+                140,
+                374,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 140,
+            "y": 374
+            },
+            "medal2":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                188,
+                368,
+                51,
+                117
+                ],
+                "rect_on": [
+                188,
+                368,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 188,
+            "y": 368
+            },
+            "medal3":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                245,
+                365,
+                51,
+                117
+                ],
+                "rect_on": [
+                245,
+                365,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 245,
+            "y": 365
+            },
+            "medal4":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                297,
+                369,
+                51,
+                117
+                ],
+                "rect_on": [
+                297,
+                369,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 297,
+            "y": 369
+            },
+            "medal5":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                345,
+                373,
+                51,
+                117
+                ],
+                "rect_on": [
+                345,
+                373,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 345,
+            "y": 373
+            },
+            "medal6":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                392,
+                371,
+                51,
+                117
+                ],
+                "rect_on": [
+                392,
+                371,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 392,
+            "y": 371
+            },
+            "medal7":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                439,
+                371,
+                51,
+                117
+                ],
+                "rect_on": [
+                439,
+                371,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 439,
+            "y": 371
+            },
+            "medal8":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                487,
+                369,
+                51,
+                117
+                ],
+                "rect_on": [
+                487,
+                369,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 487,
+            "y": 369
+            },
+            "medal9":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                541,
+                367,
+                51,
+                117
+                ],
+                "rect_on": [
+                541,
+                367,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 541,
+            "y": 367
+            },
+            "medal0":{
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                    },
+                "examine": false,
+                "image_off": "medal_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                591,
+                373,
+                51,
+                117
+                ],
+                "rect_on": [
+                591,
+                373,
+                51,
+                117
+            ],
+            "reqs": [],
+            "response": "",
+            "sound_off": "medal.wav",
+            "sound_on": "medal.wav",
+            "speed": 0,
+            "x": 591,
+            "y": 373
+            },
+            "closetkey": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": true,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "closetkey_off.png",
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    472,
+                    320,
+                    70,
+                    23
+                ],
+                "rect_on": [
+                    542,
+                    342,
+                    0,
+                    0
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "",
+                "sound_on": "closetkey.wav",
+                "speed": 0,
+                "x": 471,
+                "y": 319
+            },
+            "picture": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [
+                "bedroom_medals_medal1",
+                "bedroom_medals_medal4",
+                "bedroom_medals_medal5",
+                "bedroom_medals_medal6",
+                "bedroom_medals_medal7",
+                "bedroom_medals_medal9",
+                "bedroom_medals_medal0"],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "picture_off.png",
+                "image_on": "picture_on.png",
+                "info": false,
+                "layer": 2,
+                "message": "I can't seem to take my mind off those medals...",
+                "parents": [],
+                "rect_off": [
+                    461,
+                    276,
+                    78,
+                    80
+                ],
+                "rect_on": [
+                    462,
+                    344,
+                    85,
+                    13
+                ],
+                "reqs": [
+                "bedroom_medals_medal2",
+                "bedroom_medals_medal3",
+                "bedroom_medals_medal8"],
+                "response": "",
+                "sound_off": "wood.wav",
+                "sound_on": "wood.wav",
+                "speed": 0,
+                "x": 438,
+                "y": 268
+            },
+            "tv": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": "tv_off.png",
+                "image_on": "tv_on.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    167,
+                    139,
+                    257,
+                    176
+                ],
+                "rect_on": [
+                    166,
+                    136,
+                    256,
+                    177
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "power.wav",
+                "sound_on": "power.wav",
+                "speed": 0,
+                "x": 167,
+                "y": 138
+            }
+        }
+    }
+}
