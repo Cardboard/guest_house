@@ -1,4 +1,157 @@
 {
+    "bed": {
+        "id": 2,
+        "objects": {
+            "drawerbot": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": ["drawerbot_off_1.png","drawerbot_off_2.png"],
+                "image_on": ["drawerbot_on_1.png","drawerbot_on_2.png"],
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    486,
+                    344,
+                    226,
+                    58
+                ],
+                "rect_on": [
+                    488,
+                    433,
+                    223,
+                    57
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "drawer.wav",
+                "sound_on": "drawer.wav",
+                "speed": 50,
+                "x": 479,
+                "y": 337
+            },
+            "drawermid": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": ["drawermid_off_1.png","drawermid_off_2.png"],
+                "image_on":  ["drawermid_on_1.png","drawermid_on_2.png"],
+                "info": false,
+                "layer": 1,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    486,
+                    267,
+                    220,
+                    55
+                ],
+                "rect_on": [
+                    488,
+                    327,
+                    216,
+                    60
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "drawer.wav",
+                "sound_on": "drawer.wav",
+                "speed": 50,
+                "x": 476,
+                "y": 245
+            },
+            "drawertop": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": ["drawertop_off_1.png","drawertop_off_2.png"],
+                "image_on": ["drawertop_on_1.png","drawertop_on_2.png"],
+                "info": false,
+                "layer": 2,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    489,
+                    161,
+                    221,
+                    56
+                ],
+                "rect_on": [
+                    488,
+                    232,
+                    222,
+                    52
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "drawer.wav",
+                "sound_on": "drawer.wav",
+                "speed": 50,
+                "x": 481,
+                "y": 150
+            },
+            "pillow": {
+                "activated": false,
+                "antiparents": [],
+                "antireqs": [],
+                "breaks": false,
+                "dies": false,
+                "door": {
+                    "room": "",
+                    "view": ""
+                },
+                "examine": false,
+                "image_off": ["pillow_off_1.png","pillow_off_2.png"],
+                "image_on": "empty.png",
+                "info": false,
+                "layer": 0,
+                "message": "",
+                "parents": [],
+                "rect_off": [
+                    271,
+                    317,
+                    47,
+                    53
+                ],
+                "rect_on": [
+                    271,
+                    317,
+                    47,
+                    53
+                ],
+                "reqs": [],
+                "response": "",
+                "sound_off": "cloth.wav",
+                "sound_on": "cloth.wav",
+                "speed": 30,
+                "x": 261,
+                "y": 308
+            }
+        }
+    },
     "game": {
         "id": 0,
         "objects": {
@@ -45,7 +198,7 @@
                 "y": 175
             },
             "gc": {
-                "activated": false,
+                "activated": true,
                 "antiparents": [],
                 "antireqs": [],
                 "breaks": false,
@@ -103,7 +256,10 @@
                     "view": "fireplace"
                 },
                 "examine": false,
-                "image_off": ["door_off_1.png", "door_off_2.png"],
+                "image_off": [
+                    "door_off_1.png",
+                    "door_off_2.png"
+                ],
                 "image_on": "empty.png",
                 "info": false,
                 "layer": 0,
@@ -140,8 +296,14 @@
                     "view": ""
                 },
                 "examine": false,
-                "image_off": ["pc_off_1.png","pc_off_2.png"],
-                "image_on": ["pc_on_1.png", "pc_on_2.png"],
+                "image_off": [
+                    "pc_off_1.png",
+                    "pc_off_2.png"
+                ],
+                "image_on": [
+                    "pc_on_1.png",
+                    "pc_on_2.png"
+                ],
                 "info": false,
                 "layer": 0,
                 "message": "",

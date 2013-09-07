@@ -21,7 +21,7 @@ class Game:
         self.SFX = 'sfx'    
         self.BORDER = 70
         self.CUSTOMMOUSE = 0 # 0 for yes, 1 for no
-        self.DEBUG = True # debug/editor mode press E to enter editor 
+        self.DEBUG = False # debug/editor mode press E to enter editor 
 
         self.width = width
         self.height = height
@@ -51,10 +51,10 @@ class Game:
         mpos = (0, 0)
         self.setup()
 
-    #   music = os.path.join(self.MUSIC, "come_home.wav")
-    #   pygame.mixer.music.load(music)
-    #   pygame.mixer.music.set_volume(0.5)
-    #   pygame.mixer.music.play(-1)
+        music = os.path.join(self.MUSIC, "come_home.wav")
+        pygame.mixer.music.load(music)
+        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.play(-1)
 
         while self.running:
             dt = self.clock.tick(self.fps) / 10.0
@@ -238,6 +238,7 @@ class Game:
                     if self.DEBUG:
                         print("* {}.json closed".format(room_name))
                     # create the object
+                    obj = data_rooms[room_name][view_name]["objects"][obj_name]
                     self.create_object(objects, room_name, view_name, obj_name, obj_path, obj)
                     self.setup_object(objects, room_name, view_name, obj_name, obj_path, obj)
                 self.rooms[room_name][view_name]['view'].objects = objects

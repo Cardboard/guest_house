@@ -330,8 +330,8 @@
                 ],
                 "reqs": [],
                 "response": "",
-                "sound_off": "",
-                "sound_on": "",
+                "sound_off": "metalclash.wav",
+                "sound_on": "metalclash.wav",
                 "speed": 20,
                 "x": 454,
                 "y": 19
@@ -476,7 +476,7 @@
                 "examine": false,
                 "image_off": ["doormid_off_1.png","doormid_off_2.png"],
                 "image_on": "empty.png",
-                "info": false,
+                "info": true,
                 "layer": 0,
                 "message": "",
                 "parents": [],
@@ -493,7 +493,7 @@
                     0
                 ],
                 "reqs": [],
-                "response": "",
+                "response": "It's locked.",
                 "sound_off": "",
                 "sound_on": "door.wav",
                 "speed": 30,
