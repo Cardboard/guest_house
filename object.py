@@ -5,7 +5,7 @@ import pygame
 class Object:
 	def __init__(self, name, x, y, image_off, image_on, rect_off, rect_on, layer=0,\
 		activated=False, examine=False, breaks=False, dies=False, message="", response="",\
-		info=False, speed=None):
+		info=False, speed=None, loop=True):
 		self.name = name
 		self.x = x
 		self.y = y 
@@ -53,14 +53,18 @@ class Object:
 		# sound stuff
 		self.sound_on = None
 		self.sound_off = None
-		# animation stuffs
+		# animation stuff
 		self.frame = 0
 		self.clock = speed
 		self.speed = speed
+		self.loop = loop
+		self.stop_anim = False # True when animation is over and loop=False
 
 	# toggle image and rect between activated and deactivated
 	def toggle(self, sounds):
 		if not(self.dead):
+			if self.stop_anim == True:
+			    self.stop_anim = False
 			if self.activated:
 				self.rect = self.rect_off
 				self.activated = False
@@ -88,33 +92,44 @@ class Object:
 		if self.activated:
 			# object is animated
 			if type(self.image_on) == list:
-				# add dt to objects clock
-				self.clock -= dt
-				# increment frame and reset clock
-				if self.clock < 0.0:
-					self.frame += 1
-					self.clock = self.speed
-					# if frame > # frames, set back to 0
-					if self.frame >= len(self.image_on):
-						self.frame = 0
-				# set image to appropriate image
-				self.image = self.image_on[self.frame]
+				if not(self.stop_anim):
+					# add dt to objects clock
+					self.clock -= dt
+					# increment frame and reset clock
+					if self.clock < 0.0:
+						self.frame += 1
+						self.clock = self.speed
+						# if frame > # frames, set back to 0
+						if self.frame >= len(self.image_on):
+						    if self.loop:
+							self.frame = 0
+						    else:
+							self.frame = len(self.image_on)-1
+							self.stop_anim = True
+						    
+					# set image to appropriate image
+					self.image = self.image_on[self.frame]
 			else:
 				self.image = self.image_on
 		else:
 			# object is animated
 			if type(self.image_off) == list:
-				# add dt to objects clock
-				self.clock -= dt
-				# increment frame and reset clock
-				if self.clock < 0.0:
-					self.frame += 1
-					self.clock = self.speed
-					# if frame > # frames, set back to 0
-					if self.frame >= len(self.image_off):
-						self.frame = 0
-				# set image to appropriate image
-				self.image = self.image_off[self.frame]
+				if not(self.stop_anim):
+					# add dt to objects clock
+					self.clock -= dt
+					# increment frame and reset clock
+					if self.clock < 0.0:
+						self.frame += 1
+						self.clock = self.speed
+						# if frame > # frames, set back to 0
+						if self.frame >= len(self.image_off):
+						    if self.loop:
+							self.frame = 0
+						    else:
+							self.frame = len(self.image_off)-1
+							self.stop_anim = True
+					# set image to appropriate image
+					self.image = self.image_off[self.frame]
 			else:
 				self.image = self.image_off
 

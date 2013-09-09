@@ -21,7 +21,7 @@ class Game:
         self.SFX = 'sfx'    
         self.BORDER = 70
         self.CUSTOMMOUSE = 0 # 0 for yes, 1 for no
-        self.DEBUG = False # debug/editor mode press E to enter editor 
+        self.DEBUG = True # debug/editor mode press E to enter editor 
 
         self.width = width
         self.height = height
@@ -270,13 +270,24 @@ class Game:
                 image_on = image_list
             else:
                 image_on = os.path.join(self.GRAPHICS, room_name, view_name, obj["image_on"])
+	# Check if object has "loop" property in json description.
+	# Object only has 'loop' in json description if it shouldn't loop.
+	# Loop is True by default
+	loop = True
+	try: 
+	    if obj['loop'] == False:
+		loop = False
+		if self.DEBUG:
+		    print("            loop mode for {} set to False".format(obj_name))
+	except KeyError:
+	    pass
         new_object = object_.Object(obj_name, obj['x'], obj['y'],\
                     image_off, image_on,\
                     obj['rect_off'], obj['rect_on'],\
                     layer=obj['layer'],\
                     activated=obj['activated'],examine=obj['examine'],\
                     breaks=obj['breaks'],dies=obj['dies'],message=obj['message'],response=obj["response"],\
-                    info=obj['info'],speed=obj['speed'])
+                    info=obj['info'],speed=obj['speed'],loop=loop)
         #self.rooms[room_name][view_name]['view'].objects[obj_name] = new_object
         objects[obj_name] = new_object
 

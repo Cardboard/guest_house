@@ -314,6 +314,7 @@
                 ],
                 "info": false,
                 "layer": 0,
+		"loop": false,
                 "message": "",
                 "parents": [],
                 "rect_off": [
