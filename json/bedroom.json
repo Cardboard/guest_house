@@ -228,7 +228,7 @@
                 "image_on": "closet_on.png",
                 "info": false,
                 "layer": 0,
-                "message": "",
+                "message": "It's locked. I know I left the key around here somewhere...",
                 "parents": [],
                 "rect_off": [
                     125,
@@ -242,7 +242,7 @@
                     557,
                     556
                 ],
-                "reqs": [],
+                "reqs": ["bedroom_medals_closetkey"],
                 "response": "",
                 "sound_off": "wood.wav",
                 "sound_on": "wood.wav",
